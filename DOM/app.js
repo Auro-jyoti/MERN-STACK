@@ -1,7 +1,6 @@
 function joined() {
     let title = document.getElementById("title");
     title.innerText = "Congratulations!!!";
-
 }
 
 function convert() {
@@ -19,8 +18,8 @@ function convert() {
 }
 
 function splitBill() {
-    let amount = document.getElementById('amount');
-    let persons = document.getElementById('persons');
+    let amount = document.getElementById("amount");
+    let persons = document.getElementById("persons");
 
     let bill = (amount.value / persons.value).toFixed(2);
 
@@ -31,16 +30,54 @@ function splitBill() {
     }
 }
 
-
 let users = [];
+
+function notifyUserExist() {
+    
+}
+
+function addUsers(userInput) {
+    let checkUser = users.filter((user) => {
+        return user.email == userInput.email;
+    });
+
+    if(checkUser.length == 0) {
+        users.push(userInput);
+    } else {
+        notifyUserExist();
+    }
+    // users.push(userInput);
+}
+
+function displayUsers() {
+    let usersContainer = document.getElementById("users");
+    usersContainer.innerHTML = " ";
+    users.map((a) => {
+        let userDiv = document.createElement("div");
+        userDiv.classList.add("user");
+        let nameSpace = document.createElement("p");
+        nameSpace.innerText = a.name;
+        let emailSpace = document.createElement("p");
+        emailSpace.innerText = a.email;
+
+        usersContainer.appendChild(userDiv);
+        userDiv.appendChild(nameSpace);
+        userDiv.appendChild(emailSpace);
+    });
+}
+
 function add() {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
 
     let user = {
-        name: name,
-        email: email
-    }
+        name: name.value,
+        email: email.value,
+    };
 
-    users.push(user);
-}
+    addUsers(user);
+
+    // users.push(user);
+
+    displayUsers();
+} 

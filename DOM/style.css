@@ -81,3 +81,27 @@ input[type="text"] {
     font-size: 56px;
     margin: 0;
 }
+
+.users {
+    width: 400px;
+    background-color: #ecc9ab;
+    height: 100vh;
+    border-radius: 12px;
+}
+
+.section {
+    display: flex;
+}
+
+.user {
+    display: flex;
+    gap: 12px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 12px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+

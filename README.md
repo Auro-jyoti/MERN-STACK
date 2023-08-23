@@ -6,9 +6,13 @@ Important sites - Omni Calculator.
 
 Using forEach you can not return anything.
 
+If you try to return anything using forEach you will get undefined, which tells that forEach can not return any value.
+
 To Overcome that problem we have something called as mapping.
 
 Using mapping one can return anything.
+
+one more difference is that we can not do chaining using forEach where as we can use map, filter etc to achieve chaining.
 
 ## Points to Remember :
 
@@ -49,3 +53,19 @@ if(copiedArray === originalArray) {
     console.log("The origninal array was not modified");
 }
 
+## Difference between innerText and innerHTML
+
+1. innerText only returns the text within the tags.
+
+2. innerHTML returns tags along with all the children tags present within the parent element.
+
+<div id="myDiv"><p>This is <strong>inner Text</strong></p></div>
+
+const myElement = document.getElementById("myDiv");
+console.log(myElement.innerText)
+
+--> gives output as This is inner Text
+
+console.log(myElement.innerHTML)
+
+--> gives output as <p>This is <strong>inner Text</strong></p>
