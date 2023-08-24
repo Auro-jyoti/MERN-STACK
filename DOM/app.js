@@ -32,8 +32,26 @@ function splitBill() {
 
 let users = [];
 
+function notifyUserAdded() {
+    let alert = document.getElementById('alert-success');
+    alert.classList.remove('alert');
+    alert.classList.add('alert-success');
+
+    setTimeout(() => {
+        alert.classList.remove('alert-success');
+        alert.classList.add('alert');
+    }, 2000);
+}
+
 function notifyUserExist() {
+    let alert = document.getElementById('alert-danger');
+    alert.classList.remove('alert');
+    alert.classList.add('alert-danger');
     
+    setTimeout(() => {
+        alert.classList.remove('alert-danger');
+        alert.classList.add('alert');
+    }, 2000);
 }
 
 function addUsers(userInput) {
@@ -43,6 +61,7 @@ function addUsers(userInput) {
 
     if(checkUser.length == 0) {
         users.push(userInput);
+        notifyUserAdded();
     } else {
         notifyUserExist();
     }
