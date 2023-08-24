@@ -122,24 +122,53 @@ input[type="text"] {
 }
 
 .alert-danger{
+    margin-top: -40px;
     padding: 16px;
     width: 40%;
-    background-color: rgb(236, 183, 183);
-    color: rgb(87, 5, 5);
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     box-sizing: border-box;
     margin-left: 30%; 
     margin-top: 12px;
     border-radius: 12px;
+    /* transition: 0.5s ;
+    opacity: 0; */
+    animation-name: added;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; 
 }
 
+@keyframes added {
+    from{
+
+    } to {
+        margin-top: 12px;
+        background-color: rgb(236, 183, 183);
+        color: rgb(87, 5, 5);
+    }
+}
 .alert-success {
+    margin-top: -40px;
     padding: 16px;
     width: 40%;
-    background-color: rgb(128, 255, 128);
-    color: green;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     box-sizing: border-box;
     margin-left: 30%;
     margin-top: 12px;
     border-radius: 12px;
+    animation-name: success;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes success {
+    from {
+
+    } to {
+        margin-top: 12px;
+        background-color: rgb(172, 255, 172);
+        color: green;
+    }
 }
 
