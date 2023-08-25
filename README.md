@@ -69,3 +69,28 @@ console.log(myElement.innerText)
 console.log(myElement.innerHTML)
 
 --> gives output as <p>This is <strong>inner Text</strong></p>
+
+
+## Promises:
+
+In javascript normal code executes line by line.
+what if some line of code takes some more time to execute?
+
+Example: c
+console.log("task1")
+<!-- console.log('task2') -->
+console.log("task3")
+
+
+setTimeout(() => {
+    console.log("task2");
+}, 1000);
+
+Here we want the javascript to wait until and unless a certain task is done !!!
+
+Thats where Promises come into picture!!
+
+In real world you can say:
+    Although it is not my general phenomena
+    but I promise I will wait untill and unless the task is completed and then I will move to execute the next task.
+
